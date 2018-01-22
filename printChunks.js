@@ -27,17 +27,15 @@ function getAndPrintHTMLChunks() {
   var callback = function(response) {
 
     response.on("data", function(chunk) {
-      console.log("chunk of len: " + chunk.length);
-      console.log(chunk.toString());
+      console.log("chunk of len: " + chunk.length + "\n");
+      console.log(chunk.toString() + "\n");
     });
-
-
 
   }
 
   // after request is processed with options using callback fn
   // end the request
-  https.request(requestOptions, callback).end();
+  https.get(requestOptions, callback).end();
 
 }
 
