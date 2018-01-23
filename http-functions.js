@@ -32,7 +32,7 @@ var options = {
 
 // --------------------------------
 
-function getAndPrintHTML(cb, requestOptions) {
+function getHTML(cb, requestOptions) {
   var https = require("https");
 
   // callback function using arrow function
@@ -51,7 +51,7 @@ function getAndPrintHTML(cb, requestOptions) {
   }).end();
 }
 
-const printHTML = getAndPrintHTML( (err, res) => {
+const printHTML = getHTML( (err, res) => {
   console.log(res);
   },
   options
@@ -60,6 +60,7 @@ const printHTML = getAndPrintHTML( (err, res) => {
 // had to swap parameters around from (options, cb) to (cb, options)
 module.exports = {
   printHTML: printHTML,
+  getHTML: getHTML,
   setOptions, setOptions,
   getOptions: getOptions
 };
