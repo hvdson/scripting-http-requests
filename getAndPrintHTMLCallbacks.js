@@ -50,11 +50,12 @@ function getAndPrintHTML(cb, requestOptions) {
   }).end();
 }
 
-const printHTML = getAndPrintHTML( (err, res) => {
+const getHTML = getAndPrintHTML( (err, res) => {
   console.log(res);
   },
   options
 );
 
-
-// look at stretchConceptsWithJohn.js for further concepts
+module.exports = function getHTML (options, callback) {
+    /* Your code here */
+};
