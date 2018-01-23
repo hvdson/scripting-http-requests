@@ -23,7 +23,7 @@ var options = {
 
 // --------------------------------
 
-function getHTML(cb, requestOptions) {
+function getHTML(requestOptions, cb) {
   var https = require("https");
 
   // callback function using arrow function
@@ -34,7 +34,7 @@ function getHTML(cb, requestOptions) {
       stringBuffer += chunk;
     });
     response.on("end", () => {
-      cb(null, stringBuffer);
+      cb(stringBuffer, null);
     });
     response.on("error", (err) => {
       cb(err);
