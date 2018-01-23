@@ -9,7 +9,6 @@ var requestOptions = {
 // assuming that we use getHTML we have parsed data presented as a string!
 function printUpperCase (html) {
   console.log(html.toLowerCase());
-
 }
 
 getHTML.getHTML(requestOptions, printUpperCase);
