@@ -24,10 +24,15 @@ function getAndPrintHTMLChunks() {
 
   /* add code here */
 
+  // callback fn handles stream
   var callback = function(response) {
 
+    response.setEncoding("utf8");
+
+    // stream fn option of "data" requests data val from stream key
     response.on("data", function(chunk) {
-      console.log("chunk of len: " + chunk.length + "\n");
+      // chunks are not in STRING format
+      console.log("[--- CHUNK ---]")
       console.log(chunk.toString() + "\n");
     });
 
